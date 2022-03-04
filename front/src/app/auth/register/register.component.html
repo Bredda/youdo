@@ -1,0 +1,20 @@
+<mat-card>
+  <form class="signup-form">
+    <img class="logo" src="/assets/logo.png" />
+    <h4>Signup</h4>
+    <mat-form-field appearance="outline">
+      <input matInput type="text" placeholder="Login" auto />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <input matInput type="password" placeholder="Password" />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <input matInput type="password" placeholder="Confirm password" />
+    </mat-form-field>
+    <button mat-stroked-button color="accent">Signup</button>
+    <p class="mat-caption">
+      Already have an account ?
+      <a class="accent-link" [routerLink]="['/auth/signin']">Sign in</a>
+    </p>
+  </form>
+</mat-card>

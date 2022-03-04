@@ -1,0 +1,77 @@
+@import "~@angular/material/theming";
+
+$youdo-black: (
+  50: #e5e5e6,
+  100: #bdbfc0,
+  200: #919496,
+  300: #65696c,
+  400: #44484d,
+  500: #23282d,
+  600: #1f2428,
+  700: #1a1e22,
+  800: #15181c,
+  900: #0c0f11,
+  A100: #56c7ff,
+  A200: #23b6ff,
+  A400: #009fef,
+  A700: #008ed5,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #ffffff,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #ffffff,
+    A700: #ffffff,
+  ),
+);
+$youdo-yellow: (
+  50: #fff7e0,
+  100: #feecb3,
+  200: #fddf80,
+  300: #fcd24d,
+  400: #fcc826,
+  500: #fbbe00,
+  600: #fab800,
+  700: #faaf00,
+  800: #f9a700,
+  900: #f89900,
+  A100: #ffffff,
+  A200: #fff7eb,
+  A400: #ffe1b8,
+  A700: #ffd69f,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #000000,
+    800: #000000,
+    900: #000000,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$youdo-primary: mat-palette($youdo-black);
+$youdo-accent: mat-palette($youdo-yellow);
+
+// The warn palette is optional (defaults to red).
+$youdo-warn: mat-palette($mat-red);
+
+// Create your Sass color vars (will be available in all the project)
+$primary: mat-color($youdo-primary);
+$accent: mat-color($youdo-accent);
+$warn: mat-color($youdo-warn);

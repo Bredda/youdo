@@ -1,0 +1,60 @@
+<div class="user-menu">
+  <button
+    mat-icon-button
+    color="accent"
+    aria-label="Example icon button with a vertical three dot icon"
+    (click)="toggleTheme()"
+    *ngIf="isDark"
+  >
+    <mat-icon>light_mode</mat-icon>
+  </button>
+  <button
+    mat-icon-button
+    color="accent"
+    aria-label="Example icon button with a vertical three dot icon"
+    (click)="toggleTheme()"
+    *ngIf="!isDark"
+  >
+    <mat-icon>dark_mode</mat-icon>
+  </button>
+  <button
+    [matMenuTriggerFor]="menuTranslate"
+    color="accent"
+    mat-icon-button
+    aria-label="Example icon button with a vertical three dot icon"
+  >
+    <mat-icon>translate</mat-icon>
+  </button>
+
+  <img
+    class="user-avatar"
+    src="/assets/shiba1.jpg"
+    [matMenuTriggerFor]="menu"
+  />
+</div>
+<div mat-card-avatar class="example-header-image"></div>
+<mat-menu #menu="matMenu">
+  <div class="user-name">{{ username }}</div>
+  <mat-divider></mat-divider>
+  <button mat-menu-item (click)="onSignout()">
+    <mat-icon>logout</mat-icon>
+    <span>{{ "AUTH.logout" | translate }}</span>
+  </button>
+</mat-menu>
+
+<mat-menu #menuTranslate="matMenu">
+  <button
+    [ngClass]="{ active: locale === 'fr' }"
+    mat-menu-item
+    (click)="setLocale('fr')"
+  >
+    <span>Français</span>
+  </button>
+  <button
+    [ngClass]="{ active: locale === 'en' }"
+    mat-menu-item
+    (click)="setLocale('en')"
+  >
+    <span>English</span>
+  </button>
+</mat-menu>

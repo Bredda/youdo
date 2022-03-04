@@ -1,0 +1,21 @@
+{
+  "AUTH": {
+    "signin": "Signin",
+    "sign in": "Sign In",
+    "logout": "Logout"
+  },
+  "TODO": {
+    "what": "What to do ?",
+    "add": "Add this task",
+    "hasNothingTodo": "Add a first task to jump start your productivity !",
+    "hasEverythingTodo": "There is work to do, pick your first task !",
+    "hasDoneEverything": "Congrats, you deserve some rest !",
+    "hasSomethingTodo": "Way to go, but there si still work ahead !",
+    "completed": "completed",
+    "markAllCompleted": "Mark all todo as completed",
+    "markAllNotCompleted": "Reset all todo completed status",
+    "clearList": "Delete the whole todo list",
+    "markCompleted": "Mark as completed",
+    "deleteTask": "Delete this task"
+  }
+}

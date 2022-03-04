@@ -1,0 +1,31 @@
+@import "theme.scss";
+
+.user-avatar {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.user-menu {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  display: flex;
+  & button {
+    margin-right: 24px;
+  }
+}
+.user-name {
+  text-align: center;
+  color: white;
+  font-size: 18px;
+  margin-bottom: 18px;
+  margin-top: 8px;
+}
+
+.active {
+  color: $accent;
+}

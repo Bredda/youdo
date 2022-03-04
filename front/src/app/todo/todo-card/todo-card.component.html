@@ -1,0 +1,20 @@
+<div [ngClass]="{ todo: true, isCompleted: todo.completed }">
+  <mat-checkbox
+    [(ngModel)]="todo.completed"
+    (change)="completed()"
+    [matTooltip]="'TODO.markCompleted' | translate"
+    matTooltipShowDelay="1000"
+  ></mat-checkbox>
+  <span class="todo-text">{{ todo.text }}</span>
+  <span class="flex-spacer"></span>
+
+  <button
+    mat-icon-button
+    aria-label="Example icon button with a vertical three dot icon"
+    (click)="remove()"
+    [matTooltip]="'TODO.deleteTask' | translate"
+    matTooltipShowDelay="1000"
+  >
+    <mat-icon>cancel</mat-icon>
+  </button>
+</div>

@@ -1,0 +1,38 @@
+<div class="todos-info">
+  <div
+    class="mood-status mat-title"
+    *ngIf="todoService.hasNothingTodo() | async"
+  >
+    {{ "TODO.hasNothingTodo" | translate }}
+  </div>
+  <div
+    class="mood-status mat-title"
+    *ngIf="todoService.hasEverythingTodo() | async"
+  >
+    {{ "TODO.hasEverythingTodo" | translate }}
+  </div>
+  <div
+    class="mood-status mat-title"
+    *ngIf="todoService.hasDoneEverything() | async"
+  >
+    {{ "TODO.hasDoneEverything" | translate }}
+  </div>
+  <div
+    class="mood-status mat-title"
+    *ngIf="todoService.hasSomethingTodo() | async"
+  >
+    {{ "TODO.hasSomethingTodo" | translate }}
+  </div>
+  <mat-progress-bar
+    mode="determinate"
+    [value]="todoService.getCompletionRatio() | async"
+    color="accent"
+  ></mat-progress-bar>
+  <div class="overall-status mat-caption">
+    {{ todoService.getNumberOfCompleted() | async }} /
+    {{ todoService.getNumberOfTodo() | async }}
+    {{ "TODO.completed" | translate }}
+  </div>
+
+  <mat-divider></mat-divider>
+</div>

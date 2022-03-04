@@ -1,0 +1,45 @@
+version: "3.7"
+services:
+  youdo-db:
+    container_name: youdo-db
+    restart: always
+    image: postgres:10-alpine
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PWD}
+      POSTGRES_DB: ${DB_NAME}
+
+  youdo-adminer:
+    image: adminer
+    container_name: youdo-adminer
+    restart: always
+    depends_on:
+      - youdo-db
+    ports:
+      - ${ADMINER_PORT}:8080
+
+  youdo-front:
+    image: bredda/youdo-front
+    container_name: youdo-front
+    environment:
+      YOUDO_API_URL: youdo-api
+      YOUDO_API_PORT: ${API_PORT}
+    depends_on:
+      - youdo-api
+    ports:
+      - 80:80
+
+  youdo-api:
+    image: bredda/youdo-api
+    container_name: youdo-api
+    environment:
+      YOUDO_DB_URL: youdo-db
+      YOUDO_DB_PORT: 5432
+      YOUDO_DB_NAME: ${DB_NAME}
+      YOUDO_DB_USER: ${DB_USER}
+      YOUDO_DB_PASSWORD: ${DB_PWD}
+      SPRING_PROFILES_ACTIVE: docker
+    depends_on:
+      - youdo-db
+    ports:
+      - ${API_PORT}:8000

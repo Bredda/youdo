@@ -1,0 +1,10 @@
+<ng-container *ngIf="todos$ | async as result">
+  <mat-card class="todo-list" fxFlex fxLayout="column">
+    <app-todo-info></app-todo-info>
+    <app-todo-list-actions *ngIf="result.length > 0"></app-todo-list-actions>
+    <div>
+      <mat-divider></mat-divider>
+    </div>
+    <app-todo-card *ngFor="let todo of result" [todo]="todo"></app-todo-card>
+  </mat-card>
+</ng-container>

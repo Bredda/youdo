@@ -1,0 +1,31 @@
+<div class="global-actions">
+  <span class="flex-spacer"></span>
+  <button
+    mat-icon-button
+    aria-label="Mark all todo as completed"
+    [matTooltip]="'TODO.markAllCompleted' | translate"
+    (click)="markAllCompleted()"
+    color="accent"
+  >
+    <mat-icon>done_all</mat-icon>
+  </button>
+  <button
+    mat-icon-button
+    aria-label="Reset all todo completed status"
+    [matTooltip]="'TODO.markAllNotCompleted' | translate"
+    (click)="markAllNotCompleted()"
+    color="accent"
+  >
+    <mat-icon>restart_alt</mat-icon>
+  </button>
+
+  <button
+    mat-icon-button
+    aria-label="Clear the whole todo list"
+    [matTooltip]="'TODO.clearList' | translate"
+    (click)="clearList()"
+    color="accent"
+  >
+    <mat-icon>delete_sweep</mat-icon>
+  </button>
+</div>

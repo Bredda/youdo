@@ -1,0 +1,21 @@
+{
+  "AUTH": {
+    "signin": "Connexion",
+    "sign in": "Se connecter",
+    "logout": "Se déconnecter"
+  },
+  "TODO": {
+    "what": "Quoi faire ?",
+    "add": "Ajouter la tâche",
+    "hasNothingTodo": "Créez une première tâche pour améliorer votre productivité !",
+    "hasEverythingTodo": "Au travail, choisissez une première tâche !",
+    "hasDoneEverything": "Félicitations, profitez de votre journée !",
+    "hasSomethingTodo": "Bien joué, mais il reste encore du travail !",
+    "completed": "complété(s)",
+    "markAllCompleted": "Compléter toutes les tâches",
+    "markAllNotCompleted": "Reinitialiser toutes les tâches",
+    "clearList": "Supprimer toutes les tâches",
+    "markCompleted": "Compléter la tâche",
+    "deleteTask": "Supprimer cette tâche"
+  }
+}
