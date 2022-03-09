@@ -30,11 +30,12 @@
     class="user-avatar"
     src="/assets/shiba1.jpg"
     [matMenuTriggerFor]="menu"
+    data-test="user-menu-button"
   />
 </div>
 <div mat-card-avatar class="example-header-image"></div>
 <mat-menu #menu="matMenu">
-  <div class="user-name">{{ username }}</div>
+  <div class="user-name" data-test="user-name">{{ username }}</div>
   <mat-divider></mat-divider>
   <button mat-menu-item (click)="onSignout()">
     <mat-icon>logout</mat-icon>

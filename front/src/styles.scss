@@ -15,6 +15,7 @@ $youdo-theme: mat-dark-theme(
       primary: $youdo-primary,
       accent: $youdo-accent,
       warn: $youdo-warn,
+      success: $youdo-success,
     ),
   )
 );
@@ -53,4 +54,20 @@ input:-webkit-autofill:active {
 }
 .accent-link {
   color: $accent;
+}
+
+.snack-info {
+  background-color: $accent;
+  color: white;
+}
+
+.snack-danger {
+  background-color: $warn;
+  color: white;
+  text-align: center;
+}
+
+.snack-success {
+  background-color: green;
+  color: white;
 }

@@ -9,6 +9,7 @@
         required
         placeholder="Username"
         formControlName="usernameCtrl"
+        data-test="username-input"
       />
       <mat-error *ngIf="signinForm.get('usernameCtrl')?.hasError('required')">
         Email is <strong>required</strong>
@@ -21,6 +22,7 @@
         type="password"
         placeholder="Password"
         formControlName="passwordCtrl"
+        data-test="password-input"
       />
       <mat-error *ngIf="signinForm.get('usernameCtrl')?.hasError('required')">
         Email is <strong>required</strong>
@@ -32,12 +34,18 @@
       color="accent"
       type="submit"
       [disabled]="signinForm.invalid"
+      data-test="signin-button"
     >
       {{ "AUTH.sign in" | translate }}
     </button>
     <p class="mat-caption">
       No account ?
-      <a class="accent-link" [routerLink]="['/auth/signup']">Sign up</a>
+      <a
+        class="accent-link"
+        [routerLink]="['/auth/signup']"
+        data-test="signup-link"
+        >Sign up</a
+      >
     </p>
   </form>
 </mat-card>

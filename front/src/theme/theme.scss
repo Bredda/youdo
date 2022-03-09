@@ -70,7 +70,7 @@ $youdo-accent: mat-palette($youdo-yellow);
 
 // The warn palette is optional (defaults to red).
 $youdo-warn: mat-palette($mat-red);
-
+$youdo-success: mat-palette($mat-green);
 // Create your Sass color vars (will be available in all the project)
 $primary: mat-color($youdo-primary);
 $accent: mat-color($youdo-accent);

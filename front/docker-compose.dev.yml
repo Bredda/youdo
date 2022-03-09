@@ -5,9 +5,9 @@ services:
     restart: always
     image: postgres:10-alpine
     environment:
-      POSTGRES_USER: ${DB_USER}
-      POSTGRES_PASSWORD: ${DB_PWD}
-      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: youdo
+      POSTGRES_PASSWORD: youdo
+      POSTGRES_DB: youdo
 
   youdo-adminer:
     image: adminer
@@ -16,17 +16,7 @@ services:
     depends_on:
       - youdo-db
     ports:
-      - ${ADMINER_PORT}:8080
-
-  youdo-front:
-    image: bredda/youdo-front
-    container_name: youdo-front
-    environment:
-      YOUDO_API_URL: ${API_URL}:${API_PORT}
-    depends_on:
-      - youdo-api
-    ports:
-      - 80:80
+      - 8081:8080
 
   youdo-api:
     image: bredda/youdo-api
@@ -34,11 +24,11 @@ services:
     environment:
       YOUDO_DB_URL: youdo-db
       YOUDO_DB_PORT: 5432
-      YOUDO_DB_NAME: ${DB_NAME}
-      YOUDO_DB_USER: ${DB_USER}
-      YOUDO_DB_PASSWORD: ${DB_PWD}
+      YOUDO_DB_NAME: youdo
+      YOUDO_DB_USER: youdo
+      YOUDO_DB_PASSWORD: youdo
       SPRING_PROFILES_ACTIVE: docker
     depends_on:
       - youdo-db
     ports:
-      - ${API_PORT}:8000
+      - 8000:8000

@@ -16,11 +16,8 @@ RUN npm ci
 # Copy the main application
 COPY . ./
  
-# Arguments
-ARG configuration=production
- 
 # Build the application
-RUN npm run build
+RUN npm run build --prod
  
 #### Stage 2, use the compiled app, ready for production with Nginx
 FROM nginx:1.15.8-alpine
@@ -30,3 +27,8 @@ COPY --from=build /app/nginx.conf /etc/nginx/nginx.conf
  
 #Copy built angular app files to NGINX HTML folder
 COPY --from=build /app/dist/youdo/ /usr/share/nginx/html
+
+CMD ["/bin/sh", "-c", \
+"echo API_URL=[$API_URL], && \
+sed -i s#API_URL#$API_URL#g /usr/share/nginx/html/main.*.js && \
+nginx -g 'daemon off;'"]
